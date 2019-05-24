@@ -31,7 +31,11 @@ const getNavigatorProperties = (nav) => {
   }
 }
 $(document).ready(function() {
-  $.each(getNavigatorProperties(window.navigator), function(key, value) {
-    $('#fp-table > tbody').append('<tr><td>' + key + '</td><td>' + value + '</td></tr>');
-  });
+  try {
+    $.each(getNavigatorProperties(window.navigator), function(key, value) {
+      $('#fp-table > tbody').append('<tr><td>' + key + '</td><td>' + value + '</td></tr>');
+    });
+  } catch (err) {
+    alert(err.message);
+  }
 });
