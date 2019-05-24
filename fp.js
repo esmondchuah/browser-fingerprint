@@ -1,4 +1,4 @@
-const getNavigatorProperties = (nav) => {
+function getNavigatorProperties(nav) {
   return {
     // returns 'Mozilla'
     'appCodeName': nav.appCodeName,
@@ -31,6 +31,7 @@ const getNavigatorProperties = (nav) => {
   }
 }
 $(document).ready(function() {
+  $('#error').text('test');
   try {
     $.each(getNavigatorProperties(window.navigator), function(key, value) {
       $('#fp-table > tbody').append('<tr><td>' + key + '</td><td>' + value + '</td></tr>');
