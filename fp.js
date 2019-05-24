@@ -36,6 +36,6 @@ $(document).ready(function() {
       $('#fp-table > tbody').append('<tr><td>' + key + '</td><td>' + value + '</td></tr>');
     });
   } catch (err) {
-    alert(err.message);
+    $('#error').text(err.message);
   }
 });
